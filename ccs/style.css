@@ -1,18 +1,24 @@
-/* Reset some default styles */
+/* Reset default margin and padding */
 body, h1, h2, p, ul {
     margin: 0;
     padding: 0;
 }
 
+/* Basic styling */
 body {
     font-family: Arial, sans-serif;
     color: #333;
+    scroll-behavior: smooth; /* Enable smooth scrolling */
 }
 
 header {
     background: #000;
     color: #fff;
     padding: 20px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
 }
 
 header .container {
@@ -44,15 +50,20 @@ nav ul li a {
 }
 
 .hero {
-    background: url('hero-bg.jpg') no-repeat center center/cover;
+    background-image:url("images/background/privatejet_background1.jpg")
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Parallax effect */
     color: #fff;
     text-align: center;
-    padding: 100px 20px;
+    height: 100vh; /* Full viewport height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .hero-content {
-    max-width: 800px;
-    margin: 0 auto;
+    max-width: 600px;
 }
 
 .hero h2 {
@@ -66,38 +77,21 @@ nav ul li a {
 }
 
 .btn {
-    background: #d4af37; /* Gold color */
-    color: #000;
-    text-decoration: none;
+    background-color: #000;
+    color: #fff;
     padding: 10px 20px;
+    text-decoration: none;
     border-radius: 5px;
     font-weight: bold;
 }
 
-.gallery {
-    padding: 50px 20px;
-    background: #f4f4f4;
+.section {
+    padding: 60px 20px;
+    text-align: center;
 }
 
-.gallery .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    gap: 20px;
-    flex-wrap: wrap;
-}
-
-.gallery-item {
-    flex: 1;
-    min-width: 300px;
-    overflow: hidden;
-    border-radius: 10px;
-}
-
-.gallery-item img {
-    width: 100%;
-    height: auto;
-    display: block;
+.section:nth-of-type(even) {
+    background-color: #f4f4f4;
 }
 
 footer {
@@ -105,10 +99,4 @@ footer {
     color: #fff;
     padding: 20px 0;
     text-align: center;
-}
-
-footer .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
 }
